@@ -3,11 +3,21 @@
   "description": "A Video.js Tech plugin for Ogv.js",
   "author": "Derk-Jan Hartman",
   "license": "(MIT OR Apache-2.0)",
-  "version": "1.0.6",
+  "version": "1.2.0",
   "main": "es5/plugin.js",
   "keywords": [
     "videojs",
-    "videojs-plugin"
+    "videojs-plugin",
+    "ogv",
+    "ogvjs",
+    "ogv.js",
+    "ogg",
+    "vorbis",
+    "webm",
+    "opus",
+    "video",
+    "audio",
+    "techplugin"
   ],
   "repository": {
     "type": "git",
@@ -32,7 +42,6 @@
       "dist-test",
       "docs",
       "es5",
-      "ogv.js",
       "test/karma",
       "scripts"
     ]
@@ -41,7 +50,6 @@
     "dist/",
     "dist-test/",
     "es5/",
-    "ogv.js/",
     "scripts/",
     "src/",
     "test/",
@@ -76,13 +84,14 @@
     "preversion": "./scripts/npm-preversion-for-bower.sh",
     "version": "./scripts/npm-version-for-bower.sh",
     "postversion": "./scripts/npm-postversion-for-bower.sh",
-    "prerelease": "npm-run-all build",
+    "prepublish": "npm-run-all build",
     "watch": "npm run mkdirs && npm-run-all -p watch:*",
     "watch:js": "watchify src/plugin.js -t babelify -v -o dist/videojs-ogvjs.js",
     "watch:test": "watchify `find test -name '*.test.js'` -t babelify -o dist-test/videojs-ogvjs.js"
   },
   "dependencies": {
-    "video.js": "^5.0.0"
+    "ogv": "^1.1.0",
+    "video.js": "^5.8.8"
   },
   "devDependencies": {
     "babel": "^5.8.0",
@@ -108,7 +117,7 @@
     "portscanner": "^1.0.0",
     "qunitjs": "^1.0.0",
     "serve-static": "^1.10.0",
-    "sinon": "^1.0.0",
+    "sinon": "1.14.1",
     "uglify-js": "^2.5.0",
     "videojs-standard": "https://github.com/videojs/standard.git",
     "watchify": "^3.6.0"
